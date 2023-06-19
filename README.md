@@ -1,2 +1,2 @@
-# Hibernate
-Required files for hibernate
+# Java Frameworks
+Required files for Frameworks
