@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="YourPersistenceUnitName" transaction-type="RESOURCE_LOCAL">
+        <class>com.yourpackage.YourEntityClass</class>
+        <!-- Additional configuration if needed -->
+    </persistence-unit>
+</persistence>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class JpaExample {
+    public static void main(String[] args) {
+        // Create EntityManagerFactory
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("YourPersistenceUnitName");
+
+        // Create EntityManager
+        EntityManager em = emf.createEntityManager();
+
+        // Begin transaction
+        em.getTransaction().begin();
+
+        // Perform database operations using EntityManager
+        // Example: YourEntityClass entity = em.find(YourEntityClass.class, entityId);
+
+        // Commit transaction
+        em.getTransaction().commit();
+
+        // Close EntityManager and EntityManagerFactory
+        em.close();
+        emf.close();
+    }
+}
